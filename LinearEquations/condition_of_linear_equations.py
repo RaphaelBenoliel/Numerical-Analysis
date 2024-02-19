@@ -40,16 +40,18 @@ def condition_number(A):
 
     return cond
 
+# Date: 19.02.2024
+# Groups: Raphael Benoliel 209946854, Daniel Vaknin 314753161, Maor Hadad 312469463, Bar Cohen 316164938
+# Git: https://github.com/RaphaelBenoliel/Numerical-Analysis/blob/main/LinearEquations/condition_of_linear_equations.py
+# Name: Raphael Benoliel
+
 
 if __name__ == '__main__':
-    A = np.array([[2, 1.7, -2.5],
-                  [1.24, -2, -0.5],
-                  [3, 0.2, 1]])
+    A = np.array([[1, 0.5, 0.333333],
+                  [0.5, 0.333333, 0.25],
+                  [0.333333, 0.25, 0.2]])
+    print("Max Norm of A:", norm(A), "\n")
     cond = condition_number(A)
 
     print("\n condition number: ", cond)
-
-
-
-
 

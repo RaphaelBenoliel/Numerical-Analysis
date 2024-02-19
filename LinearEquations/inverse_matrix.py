@@ -9,7 +9,7 @@ The resulting identity matrix will be the inverse of the input matrix if it is n
 """
 
 def matrix_inverse(matrix):
-    print(f"=================== Finding the inverse of a non-singular matrix using elementary row operations ===================\n {matrix}\n")
+    # print(f"=================== Finding the inverse of a non-singular matrix using elementary row operations ===================\n {matrix}\n")
     if matrix.shape[0] != matrix.shape[1]:
         raise ValueError("Input matrix must be square.")
 
@@ -33,9 +33,9 @@ def matrix_inverse(matrix):
             # Scale the current row to make the diagonal element 1
             scalar = 1.0 / matrix[i, i]
             elementary_matrix = scalar_multiplication_elementary_matrix(n, i, scalar)
-            print(f"elementary matrix to make the diagonal element 1 :\n {elementary_matrix} \n")
+            # print(f"elementary matrix to make the diagonal element 1 :\n {elementary_matrix} \n")
             matrix = np.dot(elementary_matrix, matrix)
-            print(f"The matrix after elementary operation :\n {matrix}")
+            # print(f"The matrix after elementary operation :\n {matrix}")
             print("------------------------------------------------------------------------------------------------------------------")
             identity = np.dot(elementary_matrix, identity)
 
@@ -46,7 +46,7 @@ def matrix_inverse(matrix):
                 elementary_matrix = row_addition_elementary_matrix(n, j, i, scalar)
                 print(f"elementary matrix for R{j+1} = R{j+1} + ({scalar}R{i+1}):\n {elementary_matrix} \n")
                 matrix = np.dot(elementary_matrix, matrix)
-                print(f"The matrix after elementary operation :\n {matrix}")
+                # print(f"The matrix after elementary operation :\n {matrix}")
                 print("------------------------------------------------------------------------------------------------------------------")
                 identity = np.dot(elementary_matrix, identity)
 
