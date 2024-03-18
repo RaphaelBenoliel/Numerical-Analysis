@@ -82,14 +82,18 @@ def backward_substitution(mat):
 
     return x
 
+# Date: 18.03.2024
+# Groups: Raphael Benoliel 209946854, Daniel Vaknin 314753161, Maor Hadad 312469463, Bar Cohen 316164938
+# Name: Raphael Benoliel 200946854
+
 
 if __name__ == '__main__':
 
-    A_b = [[2, 3, 4, 5, 6, 70],
-           [-5, 3, 4, -2, 3, 20],
-           [4, -5, -2, 2, 6, 26],
-           [4, 5, -1, -2, -3, -12],
-           [5, 5, 3, -3, 5, 37]]
+    A_b = [[-1, 1, 3, -3, 1, -1],
+           [3, -3, -4, 2, 3, 18],
+           [2, 1, -5, -3, 5, 6],
+           [-5, -6, 4, 1, 3, 22],
+           [3, -2, -2, -3, 5, 10]]
 
     result = gaussianElimination(A_b)
     if isinstance(result, str):

@@ -43,7 +43,7 @@ def condition_number(A):
 # Date: 19.02.2024
 # Groups: Raphael Benoliel 209946854, Daniel Vaknin 314753161, Maor Hadad 312469463, Bar Cohen 316164938
 # Git: https://github.com/RaphaelBenoliel/Numerical-Analysis/blob/main/LinearEquations/condition_of_linear_equations.py
-# Name: Raphael Benoliel
+# Name: Raphael Benoliel 200946854
 
 
 if __name__ == '__main__':

@@ -15,11 +15,15 @@ def secant_method(f, x0, x1, TOL, N=50):
         x1 = p
     return p
 
+# Date: 18.03.2024
+# Groups: Raphael Benoliel 209946854, Daniel Vaknin 314753161, Maor Hadad 312469463, Bar Cohen 316164938
+# Name: Raphael Benoliel 200946854
+
 
 if __name__ == '__main__':
-    f = lambda x: x**2 - 5*x +2
-    x0 = 80
-    x1 = 100
+    f = lambda x: 6 * x **4 - 7 * x**3 - 2*x + 1
+    x0 = 0
+    x1 = 5
     TOL = 1e-6
     N = 20
     roots = secant_method(f, x0, x1, TOL, N)
