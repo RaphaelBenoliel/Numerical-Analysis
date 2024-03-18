@@ -1,23 +1,5 @@
 import numpy as np
 
-def print_matrix(matrix):
-    for row in matrix:
-        for element in row:
-            print(element, end=" ")  # Print each element in the row
-        print()  # Move to the next row
-    print()
-
-
-
-#  swapping between row i to row j in the matrix
-def swap_row(mat, i, j):
-    N = len(mat)
-    for k in range(N + 1):
-        temp = mat[i][k]
-        mat[i][k] = mat[j][k]
-        mat[j][k] = temp
-
-
 def is_diagonally_dominant(mat):
     if mat is None:
         return False
@@ -45,7 +27,7 @@ def reorder_dominant_diagonal(matrix):
     return reordered_matrix
 
 
-def DominantDiagonalFix(matrix):
+def DominantDiagonalFix(matrix,b):
     """
     Function to change a matrix to create a dominant diagonal
     :param matrix: Matrix nxn
@@ -54,6 +36,7 @@ def DominantDiagonalFix(matrix):
     #Check if we have a dominant for each column
     dom = [0]*len(matrix)
     result = list()
+    new_b = list()
    # Find the largest organ in a row
     for i in range(len(matrix)):
         for j in range(len(matrix[0])):
@@ -64,11 +47,13 @@ def DominantDiagonalFix(matrix):
         # Cannot dominant diagonal
         if i not in dom:
             print("Couldn't find dominant diagonal.")
-            return matrix
+            return matrix,b
     # Change the matrix to a dominant diagonal
     for i,j in enumerate(dom):
         result[j]=(matrix[i])
-    return result
+        new_b.append(b[j])
+    print("sucsess to make dominant diagonal with row change")
+    return result,new_b
 
 
 def swap_rows_elementary_matrix(n, row1, row2):
@@ -90,7 +75,6 @@ def matrix_multiply(A, B):
                 result[i][j] += A[i][k] * B[k][j]
 
     return np.array(result)
-
 
 def row_addition_elementary_matrix(n, target_row, source_row, scalar=1.0):
 
@@ -118,7 +102,6 @@ def scalar_multiplication_elementary_matrix(n, row_index, scalar):
     elementary_matrix[row_index, row_index] = scalar
 
     return np.array(elementary_matrix)
-
 
 # Partial Pivoting: Find the pivot row with the largest absolute value in the current column
 def partial_pivoting(A,i,N):

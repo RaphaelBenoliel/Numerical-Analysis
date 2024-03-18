@@ -41,7 +41,7 @@ def forward_substitution(mat):
 
         # if a principal diagonal element is zero,it denotes that matrix is singular,
         # and will lead to a division-by-zero later.
-        if not mat[k][pivot_row]:
+        if mat[pivot_row][k] < 0.0000001 and mat[pivot_row][k] > -0.0000001:
             return k  # Matrix is singular
 
         # Swap the current row with the pivot row

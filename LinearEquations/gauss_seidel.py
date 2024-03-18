@@ -1,7 +1,6 @@
 import numpy as np
 from numpy.linalg import norm
-
-from matrix_utility import is_diagonally_dominant
+from matrix_utility import is_diagonally_dominant, DominantDiagonalFix
 
 
 def gauss_seidel(A, b, X0, TOL=1e-16, N=200):
@@ -10,6 +9,8 @@ def gauss_seidel(A, b, X0, TOL=1e-16, N=200):
 
     if is_diagonally_dominant(A):
         print('Matrix is diagonally dominant - preforming gauss seidel algorithm\n')
+    else:
+        A,b = DominantDiagonalFix(A,b)
 
     print( "Iteration" + "\t\t\t".join([" {:>12}".format(var) for var in ["x{}".format(i) for i in range(1, len(A) + 1)]]))
     print("-----------------------------------------------------------------------------------------------")
@@ -41,6 +42,7 @@ if __name__ == '__main__':
     b = np.array([2, 6, 5])
     X0 = np.zeros_like(b)
 
+    print(f"Input matrix:\n {A}\nInput vector: {b}")
+
     solution =gauss_seidel(A, b, X0)
     print("\nApproximate solution:", solution)
-
