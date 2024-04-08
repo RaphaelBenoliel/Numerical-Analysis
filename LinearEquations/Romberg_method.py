@@ -39,10 +39,10 @@ def f(x):
 
 if __name__ == '__main__':
 
-    a = 0
-    b = 1
+    a = 0.14756259208681088
+    b = 2.9941249010247413
     n = 5
     integral = romberg_integration(f, a, b, n)
 
     print( f" Division into n={n} sections ")
-    print(f"Approximate integral in range [{a},{b}] is {integral}")
+    print(f"Approximate integral in range [{a},{b}] is {integral:.5f}")
