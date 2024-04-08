@@ -1,3 +1,5 @@
+import math
+
 import numpy as np
 
 def romberg_integration(func, a, b, n):
@@ -34,14 +36,14 @@ def romberg_integration(func, a, b, n):
 
 
 def f(x):
-    return 1/(2+x ** 4)
+    return (3*x**2 - math.sin(x**4 - x + 2)) / x**2
 
 
 if __name__ == '__main__':
 
-    a = 0.14756259208681088
-    b = 2.9941249010247413
-    n = 5
+    a = -2.3
+    b = 2.1
+    n = 40
     integral = romberg_integration(f, a, b, n)
 
     print( f" Division into n={n} sections ")
