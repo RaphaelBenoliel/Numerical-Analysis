@@ -59,3 +59,5 @@ if __name__ == "__main__":
 
     print("\nUsing Secant method:")
     secant_method(poly, test_range, epsilon)
+
+
