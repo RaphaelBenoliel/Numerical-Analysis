@@ -8,6 +8,14 @@ The resulting identity matrix will be the inverse of the input matrix if it is n
  If the input matrix is singular (i.e., its diagonal elements become zero during row operations), it raises an error.
 """
 
+"""
+Date:
+Groups: Raphael Benoliel 209946854
+Daniel Vaknin 314753161
+Maor Hadad 312469463
+Bar Cohen 316164938
+Git: https://github.com/RaphaelBenoliel/Numerical-Analysis/tree/main/LinearEquations
+"""
 def matrix_inverse(matrix):
     print(f"=================== Finding the inverse of a non-singular matrix using elementary row operations ===================\n {matrix}\n")
     if matrix.shape[0] != matrix.shape[1]:

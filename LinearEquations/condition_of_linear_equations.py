@@ -2,7 +2,7 @@ import numpy as np
 from inverse_matrix import matrix_inverse
 from matrix_utility import print_matrix
 
-
+# טיב ההצגה
 def norm(mat):
     size = len(mat)
     max_row = 0
