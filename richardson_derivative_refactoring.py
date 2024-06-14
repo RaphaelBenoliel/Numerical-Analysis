@@ -1,3 +1,6 @@
+import math
+
+
 def forward_difference(f, x, h):
     """Compute the forward difference approximation of the derivative."""
     return (f(x + h) - f(x)) / h
@@ -19,9 +22,6 @@ def richardson_derivative(f, x, h):
 
 
 if __name__ == '__main__':
-    import math
-
-
     def f(x):
         return math.sin(x)
 
