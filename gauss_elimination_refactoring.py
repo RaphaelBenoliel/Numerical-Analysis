@@ -1,7 +1,10 @@
+
+
 def gauss_elimination(A, b):
     n = len(b)
     forward_elimination(A, b, n)
     return back_substitution(A, b, n)
+
 
 def forward_elimination(A, b, n):
     for i in range(n):
@@ -12,16 +15,19 @@ def forward_elimination(A, b, n):
             ratio = A[j][i] / A[i][i]
             eliminate(A, b, i, j, ratio, n)
 
+
 def pivot(A, b, i, n):
     max_index = i + max(range(n - i), key=lambda k: abs(A[i + k][i]))
     if i != max_index:
         A[i], A[max_index] = A[max_index], A[i]
         b[i], b[max_index] = b[max_index], b[i]
 
+
 def eliminate(A, b, i, j, ratio, n):
     for k in range(i, n):  # Note: starting from i instead of 0 for efficiency
         A[j][k] -= ratio * A[i][k]
     b[j] -= ratio * b[i]
+
 
 def back_substitution(A, b, n):
     x = [0 for _ in range(n)]
@@ -34,6 +40,7 @@ def back_substitution(A, b, n):
         x[i] /= A[i][i]
 
     return x
+
 
 if __name__ == '__main__':
     A = [[1, -1, 2, -1],
