@@ -6,6 +6,7 @@ def simpsons_rule(f, start, end, intervals):
     sum_result = calculate_odd_sum(f, start, step_size, intervals) + calculate_even_sum(f, start, step_size, intervals)
     return (step_size / 3) * (f(start) + f(end) + sum_result)
 
+
 def calculate_odd_sum(f, start, step_size, intervals):
     total_sum = 0.0
     x = start + step_size
@@ -14,6 +15,7 @@ def calculate_odd_sum(f, start, step_size, intervals):
         x += 2 * step_size
     return total_sum
 
+
 def calculate_even_sum(f, start, step_size, intervals):
     total_sum = 0.0
     x = start + 2 * step_size
@@ -21,6 +23,7 @@ def calculate_even_sum(f, start, step_size, intervals):
         total_sum += 2 * f(x)
         x += 2 * step_size
     return total_sum
+
 
 if __name__ == '__main__':
     f = lambda x: math.e ** (x ** 2)
